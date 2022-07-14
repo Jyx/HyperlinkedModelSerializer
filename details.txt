@@ -1,0 +1,15 @@
+(myenv) ts@rajnish-kumar:~/Documents/Rajnish@Django/REST Framework/Hyperlinked Model Serializer$ python3 manage.py shell
+Python 3.8.10 (default, Mar 15 2022, 12:22:08) 
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from HyperlinkedModelSerializerApp.serializers import StudentSerializer
+>>> serializer = StudentSerializer()
+>>> print(repr(serializer))
+StudentSerializer():
+    id = IntegerField(label='ID', read_only=True)
+    url = HyperlinkedIdentityField(view_name='student-detail')
+    name = CharField(max_length=255)
+    roll = IntegerField()
+    city = CharField(max_length=255)
+>>> 
