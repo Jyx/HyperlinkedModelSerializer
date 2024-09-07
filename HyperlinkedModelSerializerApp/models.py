@@ -9,3 +9,8 @@ class Student(models.Model):
 class Course(models.Model):
     name = models.CharField(max_length=255)
     rating = models.IntegerField()
+
+class Diploma(models.Model):
+    rating = models.IntegerField()
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='diplomas')
+    
