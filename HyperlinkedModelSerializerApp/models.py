@@ -5,3 +5,7 @@ class Student(models.Model):
     name = models.CharField(max_length=255)
     roll = models.IntegerField()
     city = models.CharField(max_length=255)
+
+class Course(models.Model):
+    name = models.CharField(max_length=255)
+    rating = models.IntegerField()
