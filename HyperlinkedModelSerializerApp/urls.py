@@ -9,10 +9,10 @@ from rest_framework_nested import routers
 from .import views
 
 router = routers.DefaultRouter()
-router.register(r'studentapis', views.StudentModelView)
+router.register(r'students', views.StudentModelView)
 router.register(r'courses', views.CourseModelView)
 
-diploma_router = routers.NestedSimpleRouter(router, r'studentapis', lookup='student')
+diploma_router = routers.NestedSimpleRouter(router, r'students', lookup='student')
 diploma_router.register(r'diplomas', views.DiplomaModelView, basename='student-diplomas')
 
 urlpatterns = router.urls + diploma_router.urls
